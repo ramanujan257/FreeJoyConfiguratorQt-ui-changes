@@ -74,12 +74,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->layoutV_tabAxesCurvesConfig->addWidget(m_axesCurvesConfig);
     qDebug()<<"curves config load time ="<< timer.restart() << "ms";
     // add shift registers widget
-    m_shiftRegConfig = new ShiftRegistersConfig(this);
-    ui->layoutV_tabShiftRegistersConfig->addWidget(m_shiftRegConfig);
     qDebug()<<"shift config load time ="<< timer.restart() << "ms";
     // add encoders widget
-    m_encoderConfig = new EncodersConfig(this);
-    ui->layoutV_tabEncodersConfig->addWidget(m_encoderConfig);
     qDebug()<<"encoder config load time ="<< timer.restart() << "ms";
     // add led widget
     m_ledConfig = new LedConfig(this);
@@ -131,17 +127,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_pinConfig, &PinConfig::totalButtonsValueChanged, m_buttonConfig, &ButtonConfig::setUiOnOff);
     // LEDs changed
     connect(m_pinConfig, &PinConfig::totalLEDsValueChanged, m_ledConfig, &LedConfig::spawnLeds);
-    // encoder changed
-    connect(m_buttonConfig, &ButtonConfig::encoderInputChanged, m_encoderConfig, &EncodersConfig::encoderInputChanged);
-    // fast encoder
-    connect(m_pinConfig, &PinConfig::fastEncoderSelected, m_encoderConfig, &EncodersConfig::fastEncoderSelected);
-    // shift registers
-    connect(m_pinConfig, &PinConfig::shiftRegSelected, m_shiftRegConfig, &ShiftRegistersConfig::shiftRegSelected);
     // a2b count
     connect(m_axesConfig, &AxesConfig::a2bCountChanged, m_pinConfig, &PinConfig::a2bCountChanged);
-    // shift reg buttons count shiftRegsButtonsCount
-    connect(m_shiftRegConfig, &ShiftRegistersConfig::shiftRegButtonsCountChanged,
-            m_pinConfig, &PinConfig::shiftRegButtonsCountChanged);
     // buttonts/LEDs limit reached
     connect(m_pinConfig, &PinConfig::limitReached, this, &MainWindow::blockWRConfigToDevice);
     // axes source changed//axesSourceChanged
@@ -383,10 +370,6 @@ void MainWindow::UiReadFromConfig()
     m_axesConfig->readFromConfig();
     // read axes curves config
     m_axesCurvesConfig->readFromConfig();
-    // read shift registers config
-    m_shiftRegConfig->readFromConfig();
-    // read encoder config
-    m_encoderConfig->readFromConfig();
     // read LED config
     m_ledConfig->readFromConfig();
     // read adv.settings config
@@ -403,10 +386,6 @@ void MainWindow::UiWriteToConfig()
     m_axesConfig->writeToConfig();
     // write axes curves config
     m_axesCurvesConfig->writeToConfig();
-    // write shift registers config
-    m_shiftRegConfig->writeToConfig();
-    // write encoder config
-    m_encoderConfig->writeToConfig();
     // write LED config
     m_ledConfig->writeToConfig();
     // write adv.settings config
@@ -616,8 +595,6 @@ void MainWindow::languageChanged(const QString &language)
     m_pinConfig->retranslateUi();
     m_buttonConfig->retranslateUi();
     m_ledConfig->retranslateUi();
-    m_encoderConfig->retranslateUi();
-    m_shiftRegConfig->retranslateUi();
     m_axesConfig->retranslateUi();
     m_axesCurvesConfig->retranslateUi();
     m_advSettings->retranslateUi();

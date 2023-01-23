@@ -89,7 +89,7 @@ void MainWindow::themeChanged(bool dark)
                 QPushButton#pushButton_Wiki {
                     border: 1px solid;
                     border-color: rgb(173, 173, 173);
-                    border-radius:15px;
+                    border-radius:0px;
                     padding:0px;
                     margin: 0px;
                     min-width: 30;
@@ -104,12 +104,12 @@ void MainWindow::themeChanged(bool dark)
                     border: 1px solid;
                     border-color: rgb(0, 120, 215);
                     background-color: rgb(229, 241, 251);
-                    border-radius:15px;
+                    border-radius:0px;
                 }
             )"));
 
         // stylesheet icon: url(...); does not work in linux?
-        ui->pushButton_Wiki->setIcon(QIcon(":/Images/ST_wiki.png"));
+        ui->pushButton_Wiki->setIcon(QIcon(":/Images/icon-32.png"));
 
         styleName = "white";
     }
@@ -199,7 +199,7 @@ void MainWindow::themeChanged(bool dark)
                 QPushButton#pushButton_Wiki {
                     border: 1px solid;
                     border-color: rgb(173, 173, 173);
-                    border-radius:15px;
+                    border-radius:0px;
                     padding:0px;
                     margin: 0px;
                     min-width: 30;
@@ -214,12 +214,12 @@ void MainWindow::themeChanged(bool dark)
                     border: 1px solid;
                     border-color: rgb(45,160,250);
                     background-color: rgb(20,90,150);
-                    border-radius:15px;
+                    border-radius:0px;
                 }
             )"));
 
         // stylesheet icon: url(...); does not work in linux?
-        ui->pushButton_Wiki->setIcon(QIcon(":/Images/ST_wiki_dark.png"));
+        ui->pushButton_Wiki->setIcon(QIcon(":/Images/icon-32.png"));
 
         styleName = "dark";
     }

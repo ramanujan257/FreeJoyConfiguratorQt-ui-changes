@@ -22,8 +22,7 @@ AxesCurves::AxesCurves(QWidget *parent)
 
     // should be X-Y-Z-Rx-Ry-Rz-Slider1-Slider2 !!!
     m_curvesList << ui->widget_CurveX << ui->widget_CurveY << ui->widget_CurveZ <<
-                    ui->widget_CurveRx << ui->widget_CurveRy << ui->widget_CurveRz <<
-                    ui->widget_CurveSlider1 << ui->widget_CurveSlider2;
+                    ui->widget_CurveRx;
 
     for (int i = 0; i < m_curvesList.size(); ++i)
     {

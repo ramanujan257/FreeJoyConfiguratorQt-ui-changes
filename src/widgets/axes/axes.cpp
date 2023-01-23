@@ -10,12 +10,8 @@ const QVector <deviceEnum_guiName_t> &axesList()    // порядок обяза
     {{
         {0,      ("X")},
         {1,      ("Y")},
-        {2,      ("Z")},
-        {3,      ("Rx")},
-        {4,      ("Ry")},
-        {5,      ("Rz")},
-        {6,      QCoreApplication::translate("Axes", "Slider 1")},
-        {7,      QCoreApplication::translate("Axes", "Slider 2")},
+        {2,      ("X1")},
+        {3,      ("Y1")},
     }};
 
     return aL;

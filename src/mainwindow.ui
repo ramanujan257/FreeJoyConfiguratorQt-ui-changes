@@ -40,220 +40,6 @@
       </property>
      </layout>
     </item>
-    <item row="0" column="1">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="baseSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="tab_PinConfig">
-       <attribute name="title">
-        <string> Pin Config </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabPinConfig">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_ButtonConfig">
-       <attribute name="title">
-        <string> Button Config </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabButtonConfig">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_AxesConfig">
-       <attribute name="title">
-        <string> Axes Config </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabAxesConfig">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_AxesCurves">
-       <attribute name="title">
-        <string> Axes Curves </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabAxesCurvesConfig">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_ShiftRegisters">
-       <attribute name="title">
-        <string> Shift Registers </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabShiftRegistersConfig">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_Encoders">
-       <attribute name="title">
-        <string> Encoders</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabEncodersConfig">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_LED">
-       <attribute name="title">
-        <string> LED/PWM </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabLedConfig">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_AdvancedSettings">
-       <attribute name="title">
-        <string> Advanced Settings </string>
-       </attribute>
-       <layout class="QVBoxLayout" name="layoutV_tabAdvSettings">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>6</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_Debug">
-       <attribute name="title">
-        <string> Debug </string>
-       </attribute>
-       <widget class="QPushButton" name="pushButton_TestButton">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>71</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string notr="true">1</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_TestButton_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>71</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>2</string>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QGroupBox" name="groupBox_4">
       <property name="minimumSize">
@@ -588,6 +374,176 @@
         </spacer>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>4</number>
+      </property>
+      <widget class="QWidget" name="tab_PinConfig">
+       <attribute name="title">
+        <string> Pin Config </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutV_tabPinConfig">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_ButtonConfig">
+       <attribute name="title">
+        <string> Button Config </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutV_tabButtonConfig">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_AxesConfig">
+       <attribute name="title">
+        <string> Axes Config </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutV_tabAxesConfig">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_AxesCurves">
+       <attribute name="title">
+        <string> Axes Curves </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutV_tabAxesCurvesConfig">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_LED">
+       <attribute name="title">
+        <string> LED/PWM </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutV_tabLedConfig">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_AdvancedSettings">
+       <attribute name="title">
+        <string> Advanced Settings </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="layoutV_tabAdvSettings">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_Debug">
+       <attribute name="title">
+        <string> Debug </string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_TestButton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_TestButton_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>

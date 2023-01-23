@@ -45,11 +45,6 @@ PinConfig::PinConfig(QWidget *parent) :         // пины - первое, чт
         ui->layoutV_pins->addWidget(m_contrLite);
         m_contrLite->show();
     }
-    ui->comboBox_board->addItem("Blue Pill");
-    ui->comboBox_board->addItem("Controller Lite");
-    ui->comboBox_board->setCurrentIndex(m_lastBoard);
-    connect(ui->comboBox_board, qOverload<int>(&CenteredCBox::currentIndexChanged),
-            this, &PinConfig::boardChanged);
 
     for (int i = 0; i < m_pinCBoxPtrList.size(); ++i) {
             connect(m_pinCBoxPtrList[i], &PinComboBox::valueChangedForInteraction,       // valgrind сообщает о утечке, но почему?

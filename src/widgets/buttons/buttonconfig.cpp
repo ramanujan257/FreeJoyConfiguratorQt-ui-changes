@@ -251,19 +251,6 @@ void ButtonConfig::typeLimit(button_type_t current, button_type_t previous)
 
 void ButtonConfig::setUiOnOff(int value)
 {
-    if (value > 0) {
-        ui->spinBox_Shift1->setEnabled(true);
-        ui->spinBox_Shift2->setEnabled(true);
-        ui->spinBox_Shift3->setEnabled(true);
-        ui->spinBox_Shift4->setEnabled(true);
-        ui->spinBox_Shift5->setEnabled(true);
-    } else {
-        ui->spinBox_Shift1->setEnabled(false);
-        ui->spinBox_Shift2->setEnabled(false);
-        ui->spinBox_Shift3->setEnabled(false);
-        ui->spinBox_Shift4->setEnabled(false);
-        ui->spinBox_Shift5->setEnabled(false);
-    }
     for (int i = 0; i < m_logicButtonPtrList.size(); ++i) {
         m_logicButtonPtrList[i]->setSpinBoxOnOff(value);
         m_logicButtonPtrList[i]->setMaxPhysButtons(value);
@@ -309,67 +296,10 @@ void ButtonConfig::buttonStateChanged()
             }
         }
     }
-
-
-    // shift state
-    for (int i = 0; i < SHIFT_COUNT; ++i) // выглядит как избыточный код, но так необходимо для оптимизации
-    {
-        if (paramsRep->shift_button_data & (1 << (i & 0x07))) {
-            m_isShifts_act = true;
-
-            if (i == 0 && m_shift1_act == false) {
-                m_defaultShiftStyle = ui->text_shift1_logicalButton->styleSheet();
-                ui->text_shift1_logicalButton->setStyleSheet(m_defaultShiftStyle + "background-color: rgb(0, 128, 0);");
-                //ui->groupBox_Shift1->setStyleSheet("background-color: rgb(0, 128, 0);");
-                //ui->spinBox_Shift1->setStyleSheet("background-color: rgb(0, 128, 0);");
-                m_shift1_act = true;
-            } else if (i == 1 && m_shift2_act == false) {
-                m_defaultShiftStyle = ui->text_shift1_logicalButton->styleSheet();
-                ui->text_shift2_logicalButton->setStyleSheet(m_defaultShiftStyle + "background-color: rgb(0, 128, 0);");
-                m_shift2_act = true;
-            } else if (i == 2 && m_shift3_act == false) {
-                m_defaultShiftStyle = ui->text_shift1_logicalButton->styleSheet();
-                ui->text_shift3_logicalButton->setStyleSheet(m_defaultShiftStyle + "background-color: rgb(0, 128, 0);");
-                m_shift3_act = true;
-            } else if (i == 3 && m_shift4_act == false) {
-                m_defaultShiftStyle = ui->text_shift1_logicalButton->styleSheet();
-                ui->text_shift4_logicalButton->setStyleSheet(m_defaultShiftStyle + "background-color: rgb(0, 128, 0);");
-                m_shift4_act = true;
-            } else if (i == 4 && m_shift5_act == false) {
-                m_defaultShiftStyle = ui->text_shift1_logicalButton->styleSheet();
-                ui->text_shift5_logicalButton->setStyleSheet(m_defaultShiftStyle + "background-color: rgb(0, 128, 0);");
-                m_shift5_act = true;
-            }
-
-        } else if (m_isShifts_act == true) {
-            if (i == 0 && m_shift1_act == true) {
-                ui->text_shift1_logicalButton->setStyleSheet(m_defaultShiftStyle);
-                m_shift1_act = false;
-            } else if (i == 0 && m_shift2_act == true) {
-                ui->text_shift2_logicalButton->setStyleSheet(m_defaultShiftStyle);
-                m_shift2_act = false;
-            } else if (i == 0 && m_shift3_act == true) {
-                ui->text_shift3_logicalButton->setStyleSheet(m_defaultShiftStyle);
-                m_shift3_act = false;
-            } else if (i == 0 && m_shift4_act == true) {
-                ui->text_shift4_logicalButton->setStyleSheet(m_defaultShiftStyle);
-                m_shift4_act = false;
-            } else if (i == 0 && m_shift5_act == true) {
-                ui->text_shift5_logicalButton->setStyleSheet(m_defaultShiftStyle);
-                m_shift5_act = false;
-            }
-
-            if (m_shift1_act == false && m_shift2_act == false && m_shift3_act == false && m_shift4_act == false
-                && m_shift5_act == false) {
-                m_isShifts_act = false;
-            }
-        }
-    }
 }
 
 void ButtonConfig::readFromConfig()
 {
-    dev_config_t *devc = &gEnv.pDeviceConfig->config;
 
     // dynamic creation with scroll
 #ifdef DYNAMIC_CREATION
@@ -388,41 +318,10 @@ void ButtonConfig::readFromConfig()
     for (int i = 0; i < m_logicButtonPtrList.size(); i++) {
         m_logicButtonPtrList[i]->readFromConfig();
     }
-    // other
-    ui->spinBox_Shift1->setValue(devc->shift_config[0].button + 1);
-    ui->spinBox_Shift2->setValue(devc->shift_config[1].button + 1);
-    ui->spinBox_Shift3->setValue(devc->shift_config[2].button + 1);
-    ui->spinBox_Shift4->setValue(devc->shift_config[3].button + 1);
-    ui->spinBox_Shift5->setValue(devc->shift_config[4].button + 1);
-
-    ui->spinBox_Timer1->setValue(devc->button_timer1_ms);
-    ui->spinBox_Timer2->setValue(devc->button_timer2_ms);
-    ui->spinBox_Timer3->setValue(devc->button_timer3_ms);
-
-    ui->spinBox_DebounceTimer->setValue(devc->button_debounce_ms);
-    ui->spinBox_A2bDebounce->setValue(devc->a2b_debounce_ms);
-
-    ui->spinBox_EncoderPressTimer->setValue(devc->encoder_press_time_ms);
 }
 
 void ButtonConfig::writeToConfig()
 {
-    dev_config_t *devc = &gEnv.pDeviceConfig->config;
-    devc->shift_config[0].button = ui->spinBox_Shift1->value() - 1;
-    devc->shift_config[1].button = ui->spinBox_Shift2->value() - 1;
-    devc->shift_config[2].button = ui->spinBox_Shift3->value() - 1;
-    devc->shift_config[3].button = ui->spinBox_Shift4->value() - 1;
-    devc->shift_config[4].button = ui->spinBox_Shift5->value() - 1;
-
-    devc->button_timer1_ms = ui->spinBox_Timer1->value();
-    devc->button_timer2_ms = ui->spinBox_Timer2->value();
-    devc->button_timer3_ms = ui->spinBox_Timer3->value();
-
-    devc->button_debounce_ms = ui->spinBox_DebounceTimer->value();
-    devc->a2b_debounce_ms = ui->spinBox_A2bDebounce->value();
-
-    devc->encoder_press_time_ms = ui->spinBox_EncoderPressTimer->value();
-
     // logical buttons
     for (int i = 0; i < m_logicButtonPtrList.size(); ++i) {
         m_logicButtonPtrList[i]->writeToConfig();

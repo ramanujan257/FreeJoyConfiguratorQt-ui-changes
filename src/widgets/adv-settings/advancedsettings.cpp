@@ -26,26 +26,17 @@ AdvancedSettings::AdvancedSettings(QWidget *parent)
     ui->layoutH_Flasher->addWidget(m_flasher);
 
     gEnv.pAppSettings->beginGroup("FontSettings");
-    ui->spinBox_FontSize->setValue(gEnv.pAppSettings->value("FontSize", "8").toInt());
     gEnv.pAppSettings->endGroup();
 
     gEnv.pAppSettings->beginGroup("StyleSettings");
     QString style = gEnv.pAppSettings->value("StyleSheet", "default").toString();
     gEnv.pAppSettings->endGroup();
-    if (style == "dark") {
-        ui->widget_StyleSwitch->setChecked(true);
-    } else {
-        ui->widget_StyleSwitch->setChecked(false);
-    }
-    connect(ui->widget_StyleSwitch, &SwitchButton::stateChanged, this, &AdvancedSettings::themeChanged);
 
 #ifndef Q_OS_WIN
     ui->text_removeName->setHidden(true);
     ui->pushButton_removeName->setHidden(true);
     ui->info_removeName->hide();
 #endif
-
-    ui->layoutG_Lang->setAlignment(Qt::AlignCenter);
 }
 
 AdvancedSettings::~AdvancedSettings()
