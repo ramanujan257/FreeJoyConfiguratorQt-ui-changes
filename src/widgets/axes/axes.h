@@ -3,9 +3,7 @@
 
 #include <QWidget>
 #include "axesextended.h"
-#include "axestobuttonsslider.h"
 
-#include "deviceconfig.h"
 #include "global.h"
 
 const QVector <deviceEnum_guiName_t> &axesList();

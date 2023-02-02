@@ -56,13 +56,13 @@ Axes::Axes(int axisNumber, QWidget *parent)
     // output checked
     connect(ui->checkBox_Output, &QCheckBox::toggled, this, &Axes::outputValueChanged);
     // calibration value changed
-    connect(ui->spinBox_CalibMax, qOverload<int>(&QSpinBox::valueChanged), this, &Axes::calibMinMaxValueChanged);
-    connect(ui->spinBox_CalibMin, qOverload<int>(&QSpinBox::valueChanged), this, &Axes::calibMinMaxValueChanged);
+    connect(ui->spinBox_CalibMax, QOverload<int>::of(&QSpinBox::valueChanged), this, &Axes::calibMinMaxValueChanged);
+    connect(ui->spinBox_CalibMin, QOverload<int>::of(&QSpinBox::valueChanged), this, &Axes::calibMinMaxValueChanged);
     // main source changed
-    connect(ui->comboBox_AxisSource1, qOverload<int>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBox_AxisSource1, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &Axes::mainSourceIndexChanged);
     // a2b count changed
-    connect(ui->spinBox_A2bCount, qOverload<int>(&QSpinBox::valueChanged), this, &Axes::a2bSpinBoxChanged);
+    connect(ui->spinBox_A2bCount, QOverload<int>::of(&QSpinBox::valueChanged), this, &Axes::a2bSpinBoxChanged);
 
     Q_ASSERT(ui->groupBox_AxixName->objectName() == QStringLiteral("groupBox_AxixName"));
 }

@@ -54,7 +54,7 @@ AxesExtended::AxesExtended(int axisNumber, QWidget *parent)
     // filter changed
     connect(ui->sliderH_Filter, &QSlider::valueChanged, this, &AxesExtended::filterChanged);
     // function changed
-    connect(ui->comboBox_Function, qOverload<int>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBox_Function, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &AxesExtended::functionIndexChanged);
 }
 
