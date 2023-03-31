@@ -24,7 +24,7 @@ int ReportConverter::paramReport(uint8_t *paramsBuf)
                 firmwareCompatible = 0;
             }
         } else if (firmwareCompatible == 1) {
-            memcpy((uint8_t *)&(gEnv.pDeviceConfig->paramsReport) + 62, paramsBuf + 2, sizeof(params_report_t) - 62);
+            memcpy((uint8_t *)&(gEnv.pDeviceConfig->paramsReport) + 62, paramsBuf + 2, sizeof(params_report_t) - 44);
             return 1;
         } else if (firmwareCompatible == -1) {
             return -1;
